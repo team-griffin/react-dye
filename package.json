@@ -1,8 +1,8 @@
 {
   "name": "@team-griffin/react-dye",
-  "version": "1.3.0",
-  "main": "dist/cjs/css-longhand.js",
-  "module": "dist/es/css-longhand.js",
+  "version": "1.3.1",
+  "main": "dist/cjs/react-dye.js",
+  "module": "dist/es/react-dye.js",
   "repository": "git@github.com:team-griffin/react-dye.git",
   "author": "Joshua Thornton <joshua.thornton@heg.com>",
   "license": "MIT",
