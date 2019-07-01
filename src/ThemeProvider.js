@@ -1,31 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Broadcast } from 'react-broadcast';
-import { compose, setPropTypes, setDisplayName } from 'recompose';
+import { compose, setDisplayName } from 'recompose';
+import { Provider } from './context';
 
 const ThemeProvider = ({
   theme,
   children,
-}) => {
-  return (
-    <Broadcast
-      channel="theme"
-      value={theme}
-    >
-      {children}
-    </Broadcast>
-  );
-};
-
-
-export const PureComponent = ThemeProvider;
+}) => (
+  <Provider
+    value={theme}
+  >
+    {children}
+  </Provider>
+);
 
 export const enhance = compose(
   setDisplayName('ThemeProvider'),
-  setPropTypes({
-    theme: PropTypes.object,
-    children: PropTypes.node.isRequired,
-  }),
 );
 
 export default enhance(ThemeProvider);

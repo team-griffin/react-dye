@@ -1,25 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Subscriber } from 'react-broadcast';
-import { compose, setPropTypes, setDisplayName } from 'recompose';
+import { Consumer } from './context';
+import { compose, setDisplayName } from 'recompose';
 
-export default () => (WrappedComponent) => {
+const enhance = compose(
+  setDisplayName('WithTheme'),
+);
+
+export default (WrappedComponent) => {
   const WithTheme = (props) => (
-    <Subscriber channel="theme">
+    <Consumer>
       {(providedTheme) => (
         <WrappedComponent
           theme={providedTheme}
           {...props}
         />
       )}
-    </Subscriber>
-  );
-
-  const enhance = compose(
-    setDisplayName('WithTheme'),
-    setPropTypes({
-      theme: PropTypes.object,
-    }),
+    </Consumer>
   );
 
   return enhance(WithTheme);
