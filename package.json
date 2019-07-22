@@ -1,6 +1,6 @@
 {
   "name": "@team-griffin/react-dye",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "dist/cjs/react-dye.js",
   "module": "dist/es/react-dye.js",
   "repository": "git@github.com:team-griffin/react-dye.git",
@@ -54,7 +54,7 @@
     "rollup-plugin-uglify-es": "^0.0.1"
   },
   "dependencies": {
-    "recompose": "^0.26.0"
+    "recompose": "^0.x.x"
   },
   "peerDependencies": {
     "react": "^16.3.0"
