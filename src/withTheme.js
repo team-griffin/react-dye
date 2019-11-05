@@ -1,10 +1,5 @@
 import React from 'react';
 import { Consumer } from './context';
-import { compose, setDisplayName } from 'recompose';
-
-const enhance = compose(
-  setDisplayName('WithTheme'),
-);
 
 export default (WrappedComponent) => {
   const WithTheme = (props) => (
@@ -18,5 +13,7 @@ export default (WrappedComponent) => {
     </Consumer>
   );
 
-  return enhance(WithTheme);
+  WithTheme.displayName = 'WithTheme';
+
+  return WithTheme;
 };
