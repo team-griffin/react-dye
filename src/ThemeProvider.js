@@ -1,5 +1,4 @@
 import React from 'react';
-import { compose, setDisplayName } from 'recompose';
 import { Provider } from './context';
 
 const ThemeProvider = ({
@@ -13,8 +12,6 @@ const ThemeProvider = ({
   </Provider>
 );
 
-export const enhance = compose(
-  setDisplayName('ThemeProvider'),
-);
+ThemeProvider.displayName = 'ThemeProvider';
 
-export default enhance(ThemeProvider);
+export default ThemeProvider;
