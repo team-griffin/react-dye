@@ -13,6 +13,7 @@ export default (WrappedComponent) => {
     </Consumer>
   );
 
+  // eslint-disable-next-line
   WithTheme.displayName = 'WithTheme';
 
   return WithTheme;

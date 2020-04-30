@@ -1,23 +1,25 @@
 import babel from 'rollup-plugin-babel';
-import localResolve from 'rollup-plugin-local-resolve';
+import resolve from 'rollup-plugin-node-resolve';
 
 export default {
   input: 'src/index.js',
   output: [
     {
-      file: 'dist/es/react-dye.development.js',
+      file: 'dist/es/react-dye.js',
       format: 'es',
     },
     {
-      file: 'dist/cjs/react-dye.development.js',
+      file: 'dist/cjs/react-dye.js',
       format: 'cjs',
     },
   ],
   plugins: [
-    localResolve(),
+    resolve(),
     babel({
       exclude: 'node_modules/**',
-      plugins: ['external-helpers'],
     }),
+  ],
+  external: [
+    'react',
   ],
 };

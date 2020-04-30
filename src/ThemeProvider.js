@@ -12,6 +12,7 @@ const ThemeProvider = ({
   </Provider>
 );
 
+// eslint-disable-next-line
 ThemeProvider.displayName = 'ThemeProvider';
 
 export default ThemeProvider;
